@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunset Beach Menu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }.menu-wrapper {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+  transform: scale(0.95);
+  transition: all 0.6s ease-in-out;
+}
+
+.menu-wrapper.show {
+  display: flex;
+  transform: scale(1);
+}
+
+.menu-column {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  width: 220px;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.menu-column h2 {
+  text-align: center;
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+.menu-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-column li {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.open-button, .close-button {
+  position: absolute;
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.open-button {
+  right: 40px;
+  background: #ff7f50;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.close-button {
+  left: 40px;
+  background: #ff4444;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+  </style>
+</head>
+<body><button class="open-button" onclick="openMenu()">Open Menu</button> <button class="close-button" onclick="closeMenu()">Close Menu</button>
+
+  <div class="menu-wrapper" id="menu">
+    <div class="menu-column">
+      <h2>Appetizers</h2>
+      <ul>
+        <li>Bruschetta</li><li>Spring Rolls</li><li>Garlic Bread</li><li>Nachos</li><li>Stuffed Mushrooms</li>
+        <li>Chicken Wings</li><li>Cheese Balls</li><li>Potato Skins</li><li>Mini Tacos</li><li>Onion Rings</li>
+      </ul>
+    </div>
+    <div class="menu-column">
+      <h2>Beverages</h2>
+      <ul>
+        <li>Lemonade</li><li>Iced Tea</li><li>Mojito</li><li>Coffee</li><li>Milkshake</li>
+        <li>Cola</li><li>Fruit Punch</li><li>Mineral Water</li><li>Smoothie</li><li>Mocktail</li>
+      </ul>
+    </div>
+    <div class="menu-column">
+      <h2>Desserts</h2>
+      <ul>
+        <li>Brownie</li><li>Cheesecake</li><li>Ice Cream</li><li>Fruit Tart</li><li>Churros</li>
+        <li>Donuts</li><li>Trifle</li><li>Mousse</li><li>Macarons</li><li>Cupcake</li>
+      </ul>
+    </div>
+    <div class="menu-column">
+      <h2>Main Course</h2>
+      <ul>
+        <li>Pasta Alfredo</li><li>Grilled Chicken</li><li>Steak</li><li>Veg Burger</li><li>Paneer Tikka</li>
+        <li>Fish Curry</li><li>Beef Stroganoff</li><li>Tofu Stir Fry</li><li>Lamb Chops</li><li>Pizza</li>
+      </ul>
+    </div>
+  </div>  <script>
+    const menu = document.getElementById('menu');
+
+    function openMenu() {
+      menu.classList.add('show');
+    }
+
+    function closeMenu() {
+      menu.classList.remove('show');
+    }
+  </script></body>
+</html>
